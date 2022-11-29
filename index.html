@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MineSweeper</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <h1 id="clear-message">Game Clear!</h1>
+  <h1 id="miss-message">Game Over!</h1>
+
+<div class="flagCountWrap">
+  <img src="image/flag.png">
+  <p id="flagCount"></p>
+</div>
+
+<div class="Panel">
+  <div class="Row">
+    <div class="row1 col1 cell" id="cell11"></div>
+    <div class="row1 col2 cell" id="cell12"></div>
+    <div class="row1 col3 cell" id="cell13"></div>
+    <div class="row1 col4 cell" id="cell14"></div>
+    <div class="row1 col5 cell" id="cell15"></div>
+    <div class="row1 col6 cell" id="cell16"></div>
+    <div class="row1 col7 cell" id="cell17"></div>
+    <div class="row1 col8 cell" id="cell18"></div>
+    <div class="row1 col9 cell" id="cell19"></div>
+  </div>
+  <div class="Row">
+    <div class="row2 col1 cell" id="cell21"></div>
+    <div class="row2 col2 cell" id="cell22"></div>
+    <div class="row2 col3 cell" id="cell23"></div>
+    <div class="row2 col4 cell" id="cell24"></div>
+    <div class="row2 col5 cell" id="cell25"></div>
+    <div class="row2 col6 cell" id="cell26"></div>
+    <div class="row2 col7 cell" id="cell27"></div>
+    <div class="row2 col8 cell" id="cell28"></div>
+    <div class="row2 col9 cell" id="cell29"></div>
+  </div>
+  <div class="Row">
+    <div class="row3 col1 cell" id="cell31"></div>
+    <div class="row3 col2 cell" id="cell32"></div>
+    <div class="row3 col3 cell" id="cell33"></div>
+    <div class="row3 col4 cell" id="cell34"></div>
+    <div class="row3 col5 cell" id="cell35"></div>
+    <div class="row3 col6 cell" id="cell36"></div>
+    <div class="row3 col7 cell" id="cell37"></div>
+    <div class="row3 col8 cell" id="cell38"></div>
+    <div class="row3 col9 cell" id="cell39"></div>
+  </div>
+  <div class="Row">
+    <div class="row4 col1 cell" id="cell41"></div>
+    <div class="row4 col2 cell" id="cell42"></div>
+    <div class="row4 col3 cell" id="cell43"></div>
+    <div class="row4 col4 cell" id="cell44"></div>
+    <div class="row4 col5 cell" id="cell45"></div>
+    <div class="row4 col6 cell" id="cell46"></div>
+    <div class="row4 col7 cell" id="cell47"></div>
+    <div class="row4 col8 cell" id="cell48"></div>
+    <div class="row4 col9 cell" id="cell49"></div>
+  </div>
+  <div class="Row">
+    <div class="row5 col1 cell" id="cell51"></div>
+    <div class="row5 col2 cell" id="cell52"></div>
+    <div class="row5 col3 cell" id="cell53"></div>
+    <div class="row5 col4 cell" id="cell54"></div>
+    <div class="row5 col5 cell" id="cell55"></div>
+    <div class="row5 col6 cell" id="cell56"></div>
+    <div class="row5 col7 cell" id="cell57"></div>
+    <div class="row5 col8 cell" id="cell58"></div>
+    <div class="row5 col9 cell" id="cell59"></div>
+  </div>
+  <div class="Row">
+    <div class="row6 col1 cell" id="cell61"></div>
+    <div class="row6 col2 cell" id="cell62"></div>
+    <div class="row6 col3 cell" id="cell63"></div>
+    <div class="row6 col4 cell" id="cell64"></div>
+    <div class="row6 col5 cell" id="cell65"></div>
+    <div class="row6 col6 cell" id="cell66"></div>
+    <div class="row6 col7 cell" id="cell67"></div>
+    <div class="row6 col8 cell" id="cell68"></div>
+    <div class="row6 col9 cell" id="cell69"></div>
+  </div>
+  <div class="Row">
+    <div class="row7 col1 cell" id="cell71"></div>
+    <div class="row7 col2 cell" id="cell72"></div>
+    <div class="row7 col3 cell" id="cell73"></div>
+    <div class="row7 col4 cell" id="cell74"></div>
+    <div class="row7 col5 cell" id="cell75"></div>
+    <div class="row7 col6 cell" id="cell76"></div>
+    <div class="row7 col7 cell" id="cell77"></div>
+    <div class="row7 col8 cell" id="cell78"></div>
+    <div class="row7 col9 cell" id="cell79"></div>
+  </div>
+  <div class="Row">
+    <div class="row8 col1 cell" id="cell81"></div>
+    <div class="row8 col2 cell" id="cell82"></div>
+    <div class="row8 col3 cell" id="cell83"></div>
+    <div class="row8 col4 cell" id="cell84"></div>
+    <div class="row8 col5 cell" id="cell85"></div>
+    <div class="row8 col6 cell" id="cell86"></div>
+    <div class="row8 col7 cell" id="cell87"></div>
+    <div class="row8 col8 cell" id="cell88"></div>
+    <div class="row8 col9 cell" id="cell89"></div>
+  </div>
+  <div class="Row">
+    <div class="row9 col1 cell" id="cell91"></div>
+    <div class="row9 col2 cell" id="cell92"></div>
+    <div class="row9 col3 cell" id="cell93"></div>
+    <div class="row9 col4 cell" id="cell94"></div>
+    <div class="row9 col5 cell" id="cell95"></div>
+    <div class="row9 col6 cell" id="cell96"></div>
+    <div class="row9 col7 cell" id="cell97"></div>
+    <div class="row9 col8 cell" id="cell98"></div>
+    <div class="row9 col9 cell" id="cell99"></div>
+  </div>
+</div>
+
+<div id="operationExplanation">
+  <p>左クリック：マスを開く</p>
+  <p>右クリック：旗を立てる</p>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
